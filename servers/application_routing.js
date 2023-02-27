@@ -1,8 +1,6 @@
 const http = require('http');
 const fs = require('fs');
 
-let messageId = 0;
-
 const server = http.createServer( (request, response) => {
     const url = request.url;
     const method = request.method;
@@ -14,7 +12,7 @@ const server = http.createServer( (request, response) => {
                             </head>
                             <body>
                                 <form action="/message" method="POST">
-                                    <input type="text" name="message" id="messageId"/>
+                                    <input type="text" name="message" id="messageFieldId"/>
                                     <button type="submit">Send</button>
                                 </form>
                             </body>
@@ -37,7 +35,7 @@ const server = http.createServer( (request, response) => {
             const message = parsedBody.split('=')[1];
 
             // We want to persist the message by saving it to a file.
-            fs.writeFileSync('message' + messageId+1 + '-' + new Date() + '.txt', message);
+            fs.writeFileSync('message' + '-' + '.txt', message);
 
             response.statusCode = 302;
             response.setHeader("location", "/");
