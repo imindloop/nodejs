@@ -35,11 +35,11 @@ const server = http.createServer( (request, response) => {
             const message = parsedBody.split('=')[1];
 
             // We want to persist the message by saving it to a file.
-            fs.writeFileSync('message' + '-' + '.txt', message);
-
-            response.statusCode = 302;
-            response.setHeader("location", "/");
-            return response.end();
+            fs.writeFile('message-' + new Date().toISOString() + '.txt', message, (error) => {
+                response.statusCode = 302;
+                response.setHeader("location", "/");
+                return response.end();
+            });
 
         });
     }
