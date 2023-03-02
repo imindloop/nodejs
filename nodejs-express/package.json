@@ -1,0 +1,26 @@
+{
+  "name": "nodejs-express",
+  "version": "1.0.0",
+  "description": "A project to showcase Node.js using express.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon ./index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/imindloop/nodejs.git"
+  },
+  "author": "Carlos Rodriguez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/imindloop/nodejs/issues"
+  },
+  "homepage": "https://github.com/imindloop/nodejs#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
